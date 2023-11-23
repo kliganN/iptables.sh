@@ -49,3 +49,5 @@ iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
 
 # deny all incoming connections
 iptables -A INPUT -j DROP
+
+iptables-save > /etc/iptables/rules.v4
