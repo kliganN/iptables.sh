@@ -31,7 +31,7 @@ iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
 iptables -A INPUT -p tcp ! --syn -m conntrack --ctstate NEW -j DROP
 
 # ssh buffer attack
-iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -m limit --limit 3/minute --limit-burst 3 -j>
+iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -m limit --limit 3/minute --limit-burst 3 -j DROP
 
 # icmp
 iptables -A INPUT -p icmp -j ACCEPT
